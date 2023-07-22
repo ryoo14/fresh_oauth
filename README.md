@@ -1,16 +1,12 @@
-# Fresh project
+# Fresh OAuth Example
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Sample OAuth Projet in Deno and Fresh, KV OAuth.  
+Only support GitHub OAuth Apps.
 
-### Usage
+## Usage
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+1. Run below command
 
-Then start the project:
+`GITHUB_CLIENT_ID=xxx GITHUB_CLIENT_SECRET=xxx deno task start`
 
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+2. Access `localhost:8000` in your browser

@@ -1,7 +1,7 @@
 {
   "lock": false,
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "start": "deno run -A --unstable --watch=static/,routes/ dev.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "imports": {
@@ -14,7 +14,8 @@
     "twind": "https://esm.sh/twind@0.16.19",
     "twind/": "https://esm.sh/twind@0.16.19/",
     "$std/": "https://deno.land/std@0.190.0/",
-    "kv_oauth": "https://deno.land/x/deno_kv_oauth@v0.2.7/mod.ts"
+    "kv_oauth": "https://deno.land/x/deno_kv_oauth@v0.2.7/mod.ts",
+    "oauth2_client": "https://deno.land/x/oauth2_client@v1.0.2/mod.ts"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

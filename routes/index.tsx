@@ -5,13 +5,14 @@ import { getSessionId } from "kv_oauth";
 export const handler: Handlers = {
   async GET(req, ctx) {
     const sessionId = await getSessionId(req);
-    const resp = ctx.render({sessionId});
-    return resp;
+    const res = ctx.render({sessionId});
+    return res;
   }
 }
 
 export default function Home(props: PageProps<any>) {
-  const signInOrOut = props.data.sessionId ? "signin" : "signout";
+  const sessionId = props.data.sessionId;
+  const signInOrOut = sessionId ? "signout" : "signin";
   return (
     <>
       <Head>
@@ -19,10 +20,12 @@ export default function Home(props: PageProps<any>) {
       </Head>
       <div class="h-screen flex">
         <div class="w-6/12 h-full flex justify-center items-center text-7xl"> 
-          a
+          {sessionId || "please sign in ->"}
         </div>
         <div class="w-6/12 h-full flex justify-center items-center text-7xl"> 
-          {signInOrOut}
+          <a href={"/" + signInOrOut}>
+            {signInOrOut}
+          </a>
         </div>
       </div>
     </>
